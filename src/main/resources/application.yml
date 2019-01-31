@@ -1,9 +1,6 @@
 server:
   port: 8081
 
-#loggin:
-#  level:
-#    org.hibernate.engine.jdbc.env.internal.LobCreatrorBuilderImpl: ERROR
 spring:
   jpa:
     properties:
@@ -12,9 +9,11 @@ spring:
           lob:
             non_contextual_creation: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/demo_project?currentSchema=demo_schema
+    url: jdbc:postgresql://localhost:5432/demo_project
     username: postgres
     password: postgres
+    hikari:
+      schema: demo_schema
   security:
     user:
       password: password
